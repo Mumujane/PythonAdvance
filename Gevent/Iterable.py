@@ -14,7 +14,6 @@ for i in range(1000000):
 for temp in a:
     print(temp)
 
-
 # 查看内存
 info = psutil.virtual_memory()
 print (u'内存使用：',psutil.Process(os.getpid()).memory_info().rss)
