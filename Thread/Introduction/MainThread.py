@@ -28,7 +28,7 @@ def main():
     # =======分割线
 
     sub_thread.start()
-    sleep(1)
+    sleep(.5)
     print("over")
 
 
