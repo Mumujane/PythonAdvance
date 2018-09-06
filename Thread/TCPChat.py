@@ -19,7 +19,7 @@ def client_ext(client_sock):
         if data:
             value = data.decode("utf-8")
             print(value)
-            client_sock.send("We have revieved your message. THX!".encode("utf-8"))
+            client_sock.send("We have received your message. THX!".encode("utf-8"))
             time.sleep(1)
         else:
             print("客户端断开连接")
