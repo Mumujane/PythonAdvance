@@ -1,15 +1,17 @@
 # 1. 读取文件
 # 2. 通过正则获取所有图片地址
 # 3. 批量下载
-import ssl
-
 import gevent
 from gevent import monkey
-from  urllib.request import *
+
+import ssl
+
+from urllib.request import *
 import re
 
-#打个补丁
+# 打个补丁
 monkey.patch_all()
+
 
 def down_image(url_path,save_path):
     """
@@ -19,12 +21,12 @@ def down_image(url_path,save_path):
     :return: NONE
     """
     ssl._create_default_https_context = ssl._create_unverified_context
-    #下载图片
+    # 下载图片
     response_data = urlopen(url_path)
-    #读取内容
+    # 读取内容
     content = response_data.read()
 
-    #保存图片
+    # 保存图片
     with open(save_path,'wb') as f:
         f.write(content)
 
@@ -32,7 +34,7 @@ def down_image(url_path,save_path):
 def main():
     """图片下载"""
     # 1. 读取文件
-    with open("./1.html") as f:
+    with open("/Users/zenglihui/PycharmProjects/PythonAdvance/PythonAdvance/Gevent/1.html") as f:
         content = f.read()
 
     # 2. 通过正则获取所有图片地址
@@ -48,7 +50,7 @@ def main():
     # 3. 批量下载
     for temp in images_List:
         #下载
-        save_path = "./images/%s.jpg" % num
+        save_path = "/Users/zenglihui/PycharmProjects/PythonAdvance/PythonAdvance/Gevent/images/%s.jpg" % num
         #save_path = "/Users/jinjing/PycharmProjects/python高级/day9/images/%s.jpg" % num
 
         #下载是比较耗时的

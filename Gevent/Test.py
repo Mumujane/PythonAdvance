@@ -38,7 +38,7 @@ def down_image(url_path,save_path):
 def main():
     """图片下载"""
     # 1. 读取文件
-    with open("./1.html") as f:
+    with open("1.html") as f:
         content = f.read()
 
     # 2. 通过正则获取所有图片地址
