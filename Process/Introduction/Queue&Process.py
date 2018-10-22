@@ -13,14 +13,16 @@ queue = multiprocessing.Queue(2)
 def write():
 
     for i in range(100):
-        queue.put(i)
+        print(queue.put(i))
         time.sleep(1)
+        # print(queue.qsize())
 
 
 def read():
     for i in range(100):
         print("读到的: ", queue.get(i))
         time.sleep(2)
+
 
 
 def main():
